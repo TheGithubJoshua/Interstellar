@@ -10,7 +10,6 @@ import mime from "mime";
 import fetch from "node-fetch";
 // import { setupMasqr } from "./Masqr.js";
 import config from "./config.js";
-import axios from 'axios';
 
 console.log(chalk.yellow("🚀 Starting server..."));
 
@@ -145,19 +144,3 @@ server.on("listening", () => {
 });
 
 server.listen({ port: PORT });
-
-const url = `https://interstellar-4uce.onrender.com/`; // Replace with your Render URL
-const interval = 30000; // Interval in milliseconds (30 seconds)
-
-function reloadWebsite() {
-  axios.get(url)
-    .then(response => {
-      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
-    })
-    .catch(error => {
-      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
-    });
-}
-
-
-setInterval(reloadWebsite, interval);
