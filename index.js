@@ -10,6 +10,7 @@ import mime from "mime";
 import fetch from "node-fetch";
 // import { setupMasqr } from "./Masqr.js";
 import config from "./config.js";
+import axios from 'axios';
 
 console.log(chalk.yellow("🚀 Starting server..."));
 
